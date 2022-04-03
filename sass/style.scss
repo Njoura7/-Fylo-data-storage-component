@@ -1,0 +1,142 @@
+//**** variables****
+// primary colors
+$gradient1: hsl(6, 100%, 80%);
+$gradient2: hsl(335, 100%, 65%);
+// neutral colors
+$pale-blue: hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$very-dark-blue: hsl(229, 57%, 11%);
+// font
+$font-stack: "Raleway", sans-serif;
+$font-size: 62.5%;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html {
+	// min-height: 100vh;
+	// min-width: 100vw;
+	font-size: $font-size;
+}
+body {
+	//  we use the min height here to avoid the overflow in the body when there is  extra space than 100vh//but then i used the same property in the html and set the height of the body "inherit"
+
+	height: 100vh;
+
+	// we can also set this : 100vh, and in that case we dont need to give a value to the html since the parent will always contain the child(which is the body in this case)
+	width: 100vw;
+	font-family: $font-stack;
+	font-size: 1.4rem;
+	background-image: url(../images/bg-mobile.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	gap: 1.6rem;
+}
+.card {
+	background-color: $dark-blue;
+	width: 85%;
+	border-radius: 1rem;
+}
+.logo-card {
+	padding: 4rem 6rem 4rem 4rem;
+	border-top-right-radius: 10rem;
+}
+.icons {
+	display: flex;
+	flex-direction: row;
+	margin-top: 3rem;
+	gap: 1.5rem;
+	.icon-container {
+		background-color: $very-dark-blue;
+		padding: 1.25rem;
+		border-radius: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.details-card {
+	padding: 3rem 3rem 5rem 3rem;
+	position: relative;
+}
+.text {
+	color: $pale-blue;
+	width: 100%;
+	text-align: center;
+	font-weight: 400;
+}
+// styling the progress bar
+.progress-bar {
+	background-color: $very-dark-blue;
+	width: 100%;
+	padding: 2px;
+	border-radius: 1rem;
+	margin: 1.5rem 0 1rem 0;
+	.progress-bar-color {
+		width: 75%;
+		background-image: linear-gradient(90deg, $gradient1, $gradient2);
+		display: flex;
+		justify-content: flex-end;
+		border-radius: 1rem;
+		padding: 2px;
+		.ball {
+			background-color: $pale-blue;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 1rem;
+		}
+	}
+}
+
+.min-max-storage {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.storage {
+		color: $pale-blue;
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+}
+.floating-msg-container {
+	position: absolute;
+	left: 50%;
+	top: 78%;
+
+	.msg {
+		background-color: white;
+		padding: 1.25rem 2.5rem;
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		left: -50%;
+		strong {
+			font-size: 4rem;
+		}
+		span {
+			color: $grayish-blue;
+			font-weight: 700;
+			letter-spacing: 0.1rem;
+			margin-left: 0.8rem;
+		}
+	}
+	.triangle {
+		display: none;
+	}
+}
+@import "_media1440.scss";

@@ -1,0 +1,55 @@
+// styling the 1440px screen
+@media screen and (min-width: 1440px) {
+	body {
+		background-image: url(../images/bg-desktop.png);
+		background-size: contain;
+		background-position-y: bottom;
+		background-color: $very-dark-blue;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.container {
+		flex-direction: row;
+		align-items: flex-end;
+		//very useful when you dont need a specific height for the container so you just make it take the height of the
+		height: fit-content;
+		width: 64%;
+		gap: 3rem;
+	}
+	.logo-card {
+		width: 40%;
+	}
+	.details-card {
+		width: 60%;
+		padding: 5rem 5rem 4rem 5rem;
+	}
+	.text {
+		text-align: left;
+	}
+	.floating-msg-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		// left: unset;
+		right: 3rem;
+		top: -30%;
+
+		.msg {
+			// padding: 0rem;
+			left: 0px;
+
+			border-bottom-right-radius: 0rem;
+		}
+		.triangle {
+			display: block;
+			width: 0px;
+			height: 0px;
+			border-right: 10px solid white;
+			border-top: 10px solid white;
+
+			border-bottom: 10px solid transparent;
+			border-left: 10px solid transparent;
+		}
+	}
+}
